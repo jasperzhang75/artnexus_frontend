@@ -37,7 +37,7 @@ function Artwork() {
       />
       <div className="artwork-grid">
       {filteredArtworks.map((artwork) => (
-          <div key={artwork.id} className="artwork-item">
+          <div key={artwork._id} className="artwork-item">
           
           <Link to={`/artwork/${artwork._id}`}>
             <img

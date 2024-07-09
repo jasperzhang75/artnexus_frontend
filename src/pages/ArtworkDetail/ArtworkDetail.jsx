@@ -1,14 +1,13 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
-import { generateArtwork } from "./../../service/openServices";
-import { AuthContext } from "../../context/AuthContextWrapper"; 
+import { generateArtwork } from "./../../service/api";
+import { AuthContext } from "../../context/AuthContextWrapper";
 import "./ArtworkDetail.css";
-import service from "./../../service/api"
-
+import service from "./../../service/api";
 
 function ArtworkDetail() {
   const { id } = useParams();
-  const [artwork, setArtwork] = useState({});
+  const [artwork, setArtwork] = useState(null);
   const [isFavourite, setIsFavourite] = useState(false);
 
   const [comments, setComments] = useState(null);
@@ -17,12 +16,11 @@ function ArtworkDetail() {
 
   const [generatedArtwork, setGeneratedArtwork] = useState(null);
   const navigate = useNavigate();
-  const { user, isLoggedIn } = useContext(AuthContext)
-
+  const { user, isLoggedIn } = useContext(AuthContext);
 
   const getArtworkDetail = async () => {
     try {
-      const res = await service.get(`api/normalartworks/${id}`);
+      const res = await service.get(`/api/normalartworks/${id}`);
       setArtwork(res.data);
     } catch (error) {
       console.log(error);
@@ -31,9 +29,9 @@ function ArtworkDetail() {
 
   const checkFavouriteStatus = async () => {
     try {
-      const res = await service.get(`api/normalartworks/${id}/favourite`);
+      const res = await service.get(`/api/normalartworks/${id}/favourite`);
       console.log(res.data);
-      setIsFavourite(res.data);
+      setIsFavourite(res.data.isFavourite);
     } catch (error) {
       console.log(error);
     }
@@ -41,9 +39,9 @@ function ArtworkDetail() {
 
   const getComments = async () => {
     try {
-      const res = await service.get(`api/normalartworks/${id}/comment`);
-      console.log(res.data);
-      setComments(res.data || null);
+      const res = await service.get(`/api/normalartworks/${id}/comment`);
+      console.log(res.data.content);
+      setComments(res.data.content || null);
       console.log(comments);
     } catch (error) {
       console.log(error);
@@ -63,11 +61,11 @@ function ArtworkDetail() {
     }
     try {
       if (isFavourite) {
-        await service.delete(`api/favourite/${isFavourite._id}`);
+        await service.delete(`/api/favourite/${id}`);
       } else {
         await service.post(`/api/normalartworks/${id}/favourite`, {
           user: user._id,
-          artwork: `${artwork._id}`,
+          artwork: id,
         });
       }
       checkFavouriteStatus();
@@ -83,16 +81,16 @@ function ArtworkDetail() {
     }
     try {
       if (comments) {
-        await service.put(`api/comment/${comments._id}`, {
-          id: comments._id,
-          artwork: id,
+        await service.put(`/api/comment/${id}`, {
+          
           content: newComment,
-          creator: user._id
+          
         });
       } else {
         await service.post(`/api/normalartworks/${id}/comment`, {
           content: newComment,
-          creator: user._id
+          creator: user._id,
+          artwork: id,
         });
       }
       await getComments();
@@ -117,6 +115,10 @@ function ArtworkDetail() {
       console.log("Error generating artwork: ", error);
     }
   };
+
+  if (!artwork) {
+    return <p>Loading..</p>;
+  }
 
   return (
     <div>
@@ -170,10 +172,10 @@ function ArtworkDetail() {
             </>
           ) : (
             <>
-              <p>{comments ? comments.text : "No comments yet"}</p>
+              <p>{comments ? comments : "No comments yet"}</p>
               <button
                 onClick={() => {
-                  setNewComment(comments ? comments.text : "");
+                  setNewComment(comments ? comments : "");
                   setEditMode(true);
                 }}
               >

@@ -11,7 +11,7 @@ function NavBar() {
       </Link>      <nav className="nav-center">
         <Link to="/">Nexus Artworks</Link>
         <Link to="/favourites">Favourites Collection</Link>
-        <Link to="/ai-mpressionist">AI Painter</Link>
+        <Link to="/aipainter">AI Painter</Link>
         <Link to="/shop">Galleria Boutique</Link>
         <Link to="/login">
           <img src={user} alt="Login" className="login-icon" /> {/* Use the SVG icon */}

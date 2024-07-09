@@ -1,0 +1,38 @@
+/* .artwork-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .artwork-item {
+    text-align: center;
+  }
+  
+  .artwork-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .artwork-item p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+  } */
+  
+  .artistartworks-container h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    color: #1c1c1c;
+    text-align: center;
+  }
+
+  .artistartworks-container p {
+    font-size: 1rem;
+    /* margin-bottom: px; */
+    font-family: "Merriweather", serif;
+    font-weight: 500;
+    color: #aeaeae;
+    text-align: center;
+  }

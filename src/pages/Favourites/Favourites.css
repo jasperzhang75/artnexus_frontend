@@ -1,0 +1,58 @@
+/* General container styling */
+.favourites-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.favourites-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #1c1c1c;
+  text-align: center;
+}
+
+/* Grid styling for the favourites */
+.favourites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Different span classes for varying item sizes */
+.favourite-item {
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.favourite-item:hover {
+  transform: scale(1.01);
+}
+
+.favourite-item img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+}
+
+.favourite-item.small {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.favourite-item.medium {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.favourite-item.large {
+  grid-column: span 3;
+  grid-row: span 3;
+}
