@@ -1,0 +1,94 @@
+.artwork-container {
+    display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px;
+  }
+  
+  .artwork-container p {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #1c1c1c;
+    width: 100%;
+  }
+  
+  .artwork-search-input {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    font-size: 0.8rem;
+    text-align: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Grid styling for the artworks */
+  .artwork-grid {
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 200vh;
+    gap: 20px;
+    max-height: 6000vh;
+    justify-content: flex-start;
+    align-items: flex-start; */
+  display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+      gap: 20px;
+      width: 100%;
+  }
+  
+  @media (min-width: 800px) {
+    .artwork-grid {
+      grid-template-columns: repeat(4, auto);
+    }
+  }
+  
+  .artwork-item {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    overflow: hidden;
+    background-color: #f2f2f2;
+    /* max-width: 325px; */
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  }
+  
+  .artwork-item:hover {
+    opacity: 0.95;
+  }
+  
+  .artwork-item:hover p {
+    color: #8c8c8c;
+  }
+  .artwork-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .artwork-item p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #1c1c1c;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .artwork-item p:first-child {
+    font-weight: bold;
+    font-family: "Merriweather", serif;
+  }
+  
+  .artwork-item p:last-child {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #8c8c8c;
+    font-size: 0.9rem;
+  }
+  

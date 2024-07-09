@@ -1,0 +1,212 @@
+.artwork-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto;
+  }
+  
+  .artwork-img-container {
+background-color: #E8E8E8;
+width: 120%;
+align-items: center
+  }
+
+  .artwork-detail-container img {
+    width: 900px;
+    padding: 40px;
+  }
+  
+  .artwork-title {
+    font-size: 1.2rem;
+    padding: 20px;
+    margin-bottom: -15px;
+    font-family: "Merriweather", serif;
+    font-weight: 500;
+    color: #1c1c1c;
+    text-align: center;
+  }
+  
+  .artwork-date {
+    font-size: 1.2rem;
+    color: #8C8C8C;
+    text-align: center;
+    font-family: "Merriweather", serif;
+  }
+  
+  .artwork-artist {
+    font-size: 1.2rem;
+    color: #8C8C8C;
+    text-align: center;
+    cursor: pointer;
+    /* text-decoration: underline; */
+    font-family: "Merriweather", serif;
+
+  }
+  
+  .artwork-description {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.5;
+    max-width: 900px;
+    font-weight: 200;
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #1c1c1c;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  
+  .generated-artwork-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #fff3cd;
+    padding: 20px;
+    width: 120%;
+  }
+  
+  .generated-artwork-container img {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 20px;
+  }
+  
+  .generated-artwork-container p {
+    font-size: 1.2rem;
+    padding: 20px;
+    margin-bottom: -15px;
+    font-family: "Merriweather", serif;
+    font-weight: 500;
+    color: #1c1c1c;
+    text-align: center;
+  }
+
+  
+  .comments-section {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .comments-section h2 {
+    font-size: 1.5rem;
+    font-family: "Merriweather", serif;
+    color: #1c1c1c;
+    margin-bottom: 10px;
+  }
+  
+  .comments-section p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .comments-section input {
+    width: calc(100% );
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+  
+  .comments-section button {
+    padding: 10px 20px;
+    margin: 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: #1c1c1c;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .comments-section button:hover {
+    background-color: #555;
+  }
+  
+  hr {
+    color: #ffffff;
+    margin-top: 40px;
+    border: 0.1px solid rgb(210, 210, 210);
+  }
+
+  .rainbow-button {
+    background: #E8E8E8; /* Background color of the button */
+    color:rgb(255, 255, 255); /* Text color */
+    padding: 10px 20px;
+    font-size: 1rem;
+    /* border: 3px solid; */
+    /* border-image: linear-gradient(
+      45deg,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet
+    ) 1; */
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    overflow:auto;
+    transition: color 0.6s;
+  }
+  
+  .rainbow-button:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet
+    );
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    transition: all 0.6s;
+  }
+  
+  .rainbow-button:hover {
+    color: rgb(255, 255, 255);
+  }
+  
+  .rainbow-button:hover:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+  }
