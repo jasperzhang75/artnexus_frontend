@@ -1,9 +1,9 @@
 import "./App.css";
 import { createContext } from "react";
 import { Routes, Route } from "react-router-dom";
-import SignUpPage from "./pages/SignUpPage";
-import SignUpArtistPage from "./pages/SignUpArtistPage";
-import LoginPage from "./pages/LoginPage";
+import SignUpPage from "./pages/SignUpPage/SignUpPage";
+import SignUpArtistPage from "./pages/SignUpArtistPage/SignUpArtistPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 import IsLoggedOut from "./components/Routing/IsLoggedOut";
 import IsLoggedIn from "./components/Routing/IsLoggedIn";
 import Artwork from "./pages/Artwork/Artwork";
@@ -29,13 +29,16 @@ function App() {
     <>
       <NavBar />
       <Routes>
-		<Route path="/aipainter" element={<AiPainter />} />
+        <Route path="/aipainter" element={<AiPainter />} />
         <Route path="/" element={<Artwork />} />
-		<Route path="/artist/:artistUrl" element={<ArtistArtworks />} />
-		<Route path="/artshop" element={<Artshop />} />
-		<Route path="/uploadedartworks/:id" element={<ArtshopDetail />} />
-        <Route path="/artist-artwork/:contentId" element={<ArtistArtworkDetail />} />
-		<Route path="/artwork/:id" element={<ArtworkDetail />} />  
+        <Route path="/artist/:artistUrl" element={<ArtistArtworks />} />
+        <Route path="/artshop" element={<Artshop />} />
+        <Route path="/uploadedartworks/:id" element={<ArtshopDetail />} />
+        <Route
+          path="/artist-artwork/:contentId"
+          element={<ArtistArtworkDetail />}
+        />
+        <Route path="/artwork/:id" element={<ArtworkDetail />} />
 
         <Route element={<IsLoggedOut />}>
           <Route path="/signup" element={<SignUpPage />} />
@@ -44,14 +47,14 @@ function App() {
         </Route>
 
         <Route element={<IsLoggedIn />}>
-        <Route path="/favourites" element={<Favourites />} />
-		<Route path="/artshop/order" element={<ArtshopOrder />} />
-		<Route path="/purchased-artworks" element={<PurchasedArtworks />} />
-		<Route path="/wishlist" element={<Wishlist />} />
-		<Route path="/publish-artwork" element={<PublishArtwork />} />
-		<Route path="/my-artworks" element={<MyArtworks />} />
-		<Route path="/modify-artwork/:id" element={<ModifyArtwork />} />
-		<Route path="/user-center" element={<UserCenter />} />
+          <Route path="/favourites" element={<Favourites />} />
+          <Route path="/artshop/order" element={<ArtshopOrder />} />
+          <Route path="/purchased-artworks" element={<PurchasedArtworks />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/publish-artwork" element={<PublishArtwork />} />
+          <Route path="/my-artworks" element={<MyArtworks />} />
+          <Route path="/modify-artwork/:id" element={<ModifyArtwork />} />
+          <Route path="/user-center" element={<UserCenter />} />
         </Route>
       </Routes>
     </>

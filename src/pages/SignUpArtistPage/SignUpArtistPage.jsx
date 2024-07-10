@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import service from "./../service/api";
+import service from "../../service/api";
+import "./SignUpArtistPage.css";
 
 function SignUpArtistPage() {
   const [formData, setFormData] = useState({
@@ -41,56 +42,66 @@ function SignUpArtistPage() {
 
   const { username, password, email, firstName, lastName } = formData;
   return (
-    <div>
+    <div className="signup-artist-container">
       <h2>Sign Up as an Artist</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username: </label>
+      <form onSubmit={handleSubmit} className="signup-artist-form">
+        <div className="signup-artist-field">
+          <label htmlFor="username" className="signup-artist-label">Username: </label>
           <input
             type="text"
             id="username"
             value={username}
             onChange={handleChange}
+            className="signup-artist-input"
           />
         </div>
-        <div>
-          <label htmlFor="email">Email: </label>
-          <input type="email" id="email" value={email} onChange={handleChange} />
+        <div className="signup-artist-field">
+          <label htmlFor="email" className="signup-artist-label">Email: </label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={handleChange}
+            className="signup-artist-input"
+          />
         </div>
-        <div>
-          <label htmlFor="password">Password: </label>
+        <div className="signup-artist-field">
+          <label htmlFor="password" className="signup-artist-label">Password: </label>
           <input
             type="password"
             id="password"
             value={password}
             onChange={handleChange}
+            className="signup-artist-input"
           />
         </div>
-        <div>
-          <label htmlFor="firstName">First Name (optional): </label>
+        <div className="signup-artist-field">
+          <label htmlFor="firstName" className="signup-artist-label">First Name: </label>
           <input
             type="text"
             id="firstName"
             value={firstName}
             onChange={handleChange}
+            className="signup-artist-input"
           />
         </div>
-        <div>
-          <label htmlFor="lastName">Last Name (optional): </label>
+        <div className="signup-artist-field">
+          <label htmlFor="lastName" className="signup-artist-label">Last Name: </label>
           <input
             type="text"
             id="lastName"
             value={lastName}
             onChange={handleChange}
+            className="signup-artist-input"
           />
         </div>
 
-        <p className="error">{errorMessage}</p>
+        <p className="signup-artist-error">{errorMessage}</p>
 
-        <p>
-          Already have an account? <Link to={"/login"}>Login.</Link>
+        <p className="signup-artist-login">
+          Already have an account? <Link to={"/login"} className="signup-artist-login-link">Login.</Link>
         </p>
-        <button>Signup</button>
+        <button className="signup-artist-button">Sign Up</button>
       </form>
     </div>
   );

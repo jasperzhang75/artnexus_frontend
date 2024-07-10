@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import service from "./../service/api";
+import service from "../../service/api";
+import "./SignUpPage.css";
 
 function SignUpPage() {
   const [formData, setFormData] = useState({
@@ -40,59 +41,69 @@ function SignUpPage() {
 
   const { username, password, email, firstName, lastName } = formData;
   return (
-    <div>
+    <div className="signup-container">
       <h2>Sign Up</h2>
       <Link to="/signup-artist" className="artist-link">
         I am an artist
       </Link>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username: </label>
+      <form onSubmit={handleSubmit} className="signup-form">
+        <div className="signup-field">
+          <label htmlFor="username" className="signup-label">Username: </label>
           <input
             type="text"
             id="username"
             value={username}
             onChange={handleChange}
+            className="signup-input"
           />
         </div>
-        <div>
-          <label htmlFor="email">Email: </label>
-          <input type="email" id="email" value={email} onChange={handleChange} />
+        <div className="signup-field">
+          <label htmlFor="email" className="signup-label">Email: </label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={handleChange}
+            className="signup-input"
+          />
         </div>
-        <div>
-          <label htmlFor="password">Password: </label>
+        <div className="signup-field">
+          <label htmlFor="password" className="signup-label">Password: </label>
           <input
             type="password"
             id="password"
             value={password}
             onChange={handleChange}
+            className="signup-input"
           />
         </div>
-        <div>
-          <label htmlFor="firstName">First Name (optional): </label>
+        <div className="signup-field">
+          <label htmlFor="firstName" className="signup-label">First Name: </label>
           <input
             type="text"
             id="firstName"
             value={firstName}
             onChange={handleChange}
+            className="signup-input"
           />
         </div>
-        <div>
-          <label htmlFor="lastName">Last Name (optional): </label>
+        <div className="signup-field">
+          <label htmlFor="lastName" className="signup-label">Last Name: </label>
           <input
             type="text"
             id="lastName"
             value={lastName}
             onChange={handleChange}
+            className="signup-input"
           />
         </div>
 
-        <p className="error">{errorMessage}</p>
+        <p className="signup-error">{errorMessage}</p>
 
-        <p>
-          Already have an account? <Link to={"/login"}>Login.</Link>
+        <p className="signup-login">
+          Already have an account? <Link to={"/login"} className="signup-login-link">Login.</Link>
         </p>
-        <button>Signup</button>
+        <button className="signup-button">Sign Up</button>
       </form>
     </div>
   );

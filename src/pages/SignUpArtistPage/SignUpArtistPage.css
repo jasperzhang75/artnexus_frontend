@@ -1,0 +1,71 @@
+.signup-artist-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .signup-artist-form {
+    width: 100%;
+  }
+  
+  .signup-artist-field {
+    margin-bottom: 20px;
+  }
+  
+  .signup-artist-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .signup-artist-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .signup-artist-error {
+    color: red;
+    margin-bottom: 20px;
+  }
+  
+  .signup-artist-login {
+    margin-top: 0;
+    font-size: 14px;
+  }
+  
+  .signup-artist-login-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .signup-artist-login-link:hover {
+    text-decoration: underline;
+  }
+  
+  .signup-artist-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signup-artist-button:hover {
+    background-color: #555;
+  }
