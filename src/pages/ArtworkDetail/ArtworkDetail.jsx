@@ -30,7 +30,7 @@ function ArtworkDetail() {
   const checkFavouriteStatus = async () => {
     try {
       const res = await service.get(`/api/normalartworks/${id}/favourite`);
-      console.log(res.data);
+      console.log(res.data.isFavourite);
       setIsFavourite(res.data.isFavourite);
     } catch (error) {
       console.log(error);

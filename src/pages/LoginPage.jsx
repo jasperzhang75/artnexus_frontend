@@ -1,6 +1,6 @@
 import { useState, useContext } from "react"
 import { AuthContext } from "../context/AuthContextWrapper"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import service from "./../service/api"
 
 function LoginPage() {
@@ -10,7 +10,7 @@ function LoginPage() {
 	})
 	const { storeToken, authenticateUser } = useContext(AuthContext)
 	const [errorMessage, setErrorMessage] = useState("")
-	const navigate = useNavigate() 
+	// const navigate = useNavigate() 
 
 	function handleChange(event) {
 		const value = event.currentTarget.value

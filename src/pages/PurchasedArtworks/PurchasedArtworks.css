@@ -1,0 +1,35 @@
+.purchased-artworks-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .purchased-artworks-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .purchased-artwork-item {
+    width: calc(50% - 10px);
+    position: relative;
+  }
+  
+  .purchased-artwork-image {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .purchased-artwork-item p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+  }
