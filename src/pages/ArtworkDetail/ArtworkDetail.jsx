@@ -4,6 +4,8 @@ import { generateArtwork } from "./../../service/api";
 import { AuthContext } from "../../context/AuthContextWrapper";
 import "./ArtworkDetail.css";
 import service from "./../../service/api";
+import heartIcon from "./../../assets/heart-svgrepo-com-2.svg";
+import heartFilledIcon from "./../../assets/heart-fill-svgrepo-com.svg";
 
 function ArtworkDetail() {
   const { id } = useParams();
@@ -15,6 +17,7 @@ function ArtworkDetail() {
   const [editMode, setEditMode] = useState(false);
 
   const [generatedArtwork, setGeneratedArtwork] = useState(null);
+  const [showOriginal, setShowOriginal] = useState(true);
   const navigate = useNavigate();
   const { user, isLoggedIn } = useContext(AuthContext);
 
@@ -82,9 +85,7 @@ function ArtworkDetail() {
     try {
       if (comments) {
         await service.put(`/api/comment/${id}`, {
-          
           content: newComment,
-          
         });
       } else {
         await service.post(`/api/normalartworks/${id}/comment`, {
@@ -107,29 +108,49 @@ function ArtworkDetail() {
 
   const handleGenerateArtwork = async () => {
     try {
-      const prompt = `Create a new artwork inspired by ${artwork.title} by 
-      ${artwork.artist_display}, created in ${artwork.date_start}.`;
+      const prompt = `Create a new artwork inspired by ${artwork.title} by ${artwork.artist_display}, created in ${artwork.date_start}.`;
       const url = await generateArtwork(prompt);
       setGeneratedArtwork(url);
+      setShowOriginal(false);
     } catch (error) {
       console.log("Error generating artwork: ", error);
     }
   };
 
+  const toggleArtwork = () => {
+    setShowOriginal(!showOriginal);
+  };
+
   if (!artwork) {
-    return <p>Loading..</p>;
+    return <p>Loading...</p>;
   }
 
   return (
     <div>
-      <hr></hr>
+      <hr className="separtor1"/>
       <div className="artwork-detail-container-renamed">
         <div className="artwork-img-container-renamed">
           <img
-            src={`https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`}
+            src={
+              showOriginal
+                ? `https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`
+                : generatedArtwork
+            }
             alt={artwork.title}
           />
+           <button className="artwork-rainbow-button-renamed" onClick={handleGenerateArtwork}>
+          AI Remix it!
+        </button>
+        
+          {!showOriginal && (
+            <button className="close-button-renamed" onClick={toggleArtwork}>
+              x
+            </button>
+          )}
+          
+          
         </div>
+        <hr className="separtor"/>
         <p className="artwork-title-renamed">{artwork.title}</p>
         <p className="artwork-date-renamed">
           {artwork.date_start} - {artwork.date_end}
@@ -142,22 +163,19 @@ function ArtworkDetail() {
           dangerouslySetInnerHTML={{ __html: artwork.description }}
         ></p>
         <div className="artwork-buttons-container-renamed">
-          <button className="artwork-toggle-favourite-button-renamed" onClick={toggleFavourite}>
-            {isFavourite ? "Unfavourite" : "Favourite"}
-          </button>
-        </div>
-        <button className="artwork-rainbow-button-renamed" onClick={handleGenerateArtwork}>
-          AI-mpressionist It!
-        </button>
-        {generatedArtwork && (
-          <div className="artwork-generated-container-renamed">
-            <p>AI-mpressionist Recreation is here!</p>
-            <img src={generatedArtwork} alt="Generated Artwork" />
+          <div className="like-button" onClick={toggleFavourite}>
+            <img src={isFavourite ? heartFilledIcon : heartIcon} alt="like button" />
           </div>
-        )}
+        </div>
+        {/* <button className="artwork-rainbow-button-renamed" onClick={handleGenerateArtwork}>
+          AI Remix it!
+        </button> */}
+        {/* {generatedArtwork && (
+          <div className="artwork-generated-container-renamed">
+          </div>
+        )} */}
         <div className="artwork-comments-section-renamed">
-          <hr></hr>
-
+          <hr />
           <h2>Comment</h2>
           {editMode ? (
             <>
@@ -167,8 +185,12 @@ function ArtworkDetail() {
                 onChange={(e) => setNewComment(e.target.value)}
                 placeholder="Add or edit your comment"
               />
-              <button className="artwork-save-comment-button-renamed" onClick={saveComment}>Save</button>
-              <button className="artwork-cancel-comment-button-renamed" onClick={() => setEditMode(false)}>Cancel</button>
+              <button className="artwork-save-comment-button-renamed" onClick={saveComment}>
+                Save
+              </button>
+              <button className="artwork-cancel-comment-button-renamed" onClick={() => setEditMode(false)}>
+                Cancel
+              </button>
             </>
           ) : (
             <>

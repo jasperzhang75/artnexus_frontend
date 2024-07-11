@@ -15,6 +15,8 @@
   font-style: normal;
   color: #1c1c1c;
   text-align: center;
+  padding-bottom: 40px;
+  font-weight: 300;
 }
 
 /* Grid styling for the favourites */
@@ -33,7 +35,7 @@
 }
 
 .favourite-item:hover {
-  transform: scale(1.01);
+  /* transform: scale(1.01); */
 }
 
 .favourite-item img {

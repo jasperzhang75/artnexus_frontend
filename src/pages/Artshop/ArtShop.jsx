@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./ArtShop.css"
+// import "./Artshop.css"
 import service from "./../../service/api"
+import "./ArtShop.css"
 
 
-function Artshop() {
+function ArtshopPage() {
   const [artworks, setArtworks] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -26,33 +27,32 @@ function Artshop() {
   );
 
   return (
-    <div className="artwork-container">
+    <div className="artshop-container">
       <input
         type="text"
         placeholder="Search Artist"
-        className="artwork-search-input"
+        className="artshop-search-input"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <div className="artwork-grid">
-      {filteredArtworks.map((artwork) => (
-          <div key={artwork._id} className="artwork-item">
-          
-          <Link to={`/uploadedartworks/${artwork._id}`}>
-            <img
-              src={`${artwork.imageUrl}`}
-              alt={artwork.title}
-              loading="lazy"
-            /></Link>
-            <p>{artwork.title}</p>
-            <p>{artwork.artist_title}</p>
-            <p>{artwork.price}</p>
-          
-        </div>
-      ))}
-    </div>
+      <div className="artshop-grid">
+        {filteredArtworks.map((artwork) => (
+          <div key={artwork._id} className="artshop-item">
+            <Link to={`/uploadedartworks/${artwork._id}`}>
+              <img
+                src={`${artwork.imageUrl}`}
+                alt={artwork.title}
+                loading="lazy"
+              />
+            </Link>
+            <p className="artshop-title">{artwork.title}</p>
+            <p className="artshop-artist">{artwork.artist_title}</p>
+            <p className="artshop-price">{artwork.price} $</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
-export default Artshop;
+export default ArtshopPage;

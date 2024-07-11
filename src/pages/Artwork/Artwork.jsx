@@ -3,12 +3,8 @@ import { Link } from "react-router-dom";
 import "./Artwork.css";
 import service from "./../../service/api";
 import { AuthContext } from "../../context/AuthContextWrapper";
-import heartIcon from "./../../assets/heart.svg";
-import heartFilledIcon from "./../../assets/heart-filled.svg";
-
-function shuffleArray(array) {
-  return array.sort(() => Math.random() - 0.5);
-}
+import heartIcon from "./../../assets/heart-svgrepo-com-2.svg";
+import heartFilledIcon from "./../../assets/heart-fill-svgrepo-com.svg";
 
 function Artwork() {
   const [artworks, setArtworks] = useState([]);
@@ -21,8 +17,7 @@ function Artwork() {
   const getArtwork = async () => {
     try {
       const res = await service.get("api/normalartworks/");
-      const shuffledArtworks = shuffleArray(res.data); // Shuffle the artworks
-      setArtworks(shuffledArtworks);
+      setArtworks(res.data);
     } catch (error) {
       console.log(error);
     }
@@ -82,29 +77,31 @@ function Artwork() {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <div className="filter-bar" onClick={() => setIsDropdownVisible(!isDropdownVisible)}>
-        <p>Filter</p>
-        {isDropdownVisible && (
-          <div className="dropdown-menu">
-            <label>
-              <input
-                type="checkbox"
-                checked={filterType.includes('impressionism')}
-                onChange={() => handleFilterChange('impressionism')}
-              />
-              Impressionism
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={filterType.includes('modernism')}
-                onChange={() => handleFilterChange('modernism')}
-              />
-              Modernism
-            </label>
-          </div>
-        )}
-      </div>
+      <button className="filter-bar" onClick={() => setIsDropdownVisible(!isDropdownVisible)}>
+        <span>Filter</span>
+        <span className="filter-icon">+</span>
+      </button>
+      {isDropdownVisible && (
+        <div className="dropdown-menu-artwork">
+          <label>
+            <input
+              type="checkbox"
+              className="custom-checkbox"
+              checked={filterType.includes('impressionism')}
+              onChange={() => handleFilterChange('impressionism')}
+            />
+            Impressionism
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={filterType.includes('modernism')}
+              onChange={() => handleFilterChange('modernism')}
+            />
+            Modernism
+          </label>
+        </div>
+      )}
       <div className="artwork-grid">
         {filteredArtworks.map((artwork) => (
           <div key={artwork._id} className="artwork-item">
@@ -116,11 +113,13 @@ function Artwork() {
               />
             </Link>
             <div className="artwork-info">
-              <p>{artwork.title}</p>
-              <p>{artwork.artist_title}</p>
-              <p className="like-button" onClick={() => toggleLike(artwork._id)}>
-                <img src={likedArtworks.includes(artwork._id) ? heartFilledIcon : heartIcon} alt="like button" />
-              </p>
+              <p className="artwork-title">{artwork.title}</p>
+              <div className="artist-like">
+                <p className="artist-title">{artwork.artist_title}</p>
+                <div className="like-button" onClick={() => toggleLike(artwork._id)}>
+                  <img src={likedArtworks.includes(artwork._id) ? heartFilledIcon : heartIcon} alt="like button" />
+                </div>
+              </div>
             </div>
           </div>
         ))}
