@@ -1,22 +1,30 @@
 .artshop-order-container {
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
   }
   
   h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 2.3rem;
+    color: #414141;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    margin-left: 0px;
+    display: flex;
+    padding-bottom: 0px;
   }
   
   .cart-content {
+    padding-top: 2rem;
     display: flex;
     justify-content: space-between;
   }
   
   .cart-items {
-    width: 60%;
+    
+    width: 55%;
+display: flex;
+flex-direction: column;
+align-items: center;
   }
   
   .cart-item {
@@ -24,12 +32,16 @@
     align-items: center;
     margin-bottom: 20px;
     position: relative;
+    background-color: #f0f0f0; /* Grey background */
+    width: 100%; /* Full width */
   }
   
+  
   .cart-item img {
-    width: 100%;
-    height: auto;
-    border: 1px solid #ccc;
+height: 300px;   
+ margin-right: 0px;
+    padding: 1rem;
+   margin-left: 13rem;
   }
   
   .remove-item-button {
@@ -40,26 +52,35 @@
     border: none;
     font-size: 24px;
     cursor: pointer;
+    color: grey;
   }
   
   .order-details {
-    width: 35%;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
+    width: 40%;
+    border-left: 1px   solid #ccc;
+    padding: 0px 20px 20px 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
   }
-  
+  h3 {
+    margin-top: 0px;
+    display: flex;
+    font-weight: 500;
+  }
   .order-detail {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
   }
   
   .order-total {
     display: flex;
     justify-content: space-between;
-    font-weight: bold;
+    font-weight: 500;
     margin-top: 20px;
+    margin-bottom: 10px;
   }
   
   .purchase-button {
@@ -72,4 +93,9 @@
     cursor: pointer;
     font-size: 16px;
     margin-top: 20px;
+font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+  }
+  .order-detail-container {
+    
   }

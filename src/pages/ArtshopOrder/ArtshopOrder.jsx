@@ -54,6 +54,7 @@ function ArtshopOrder() {
   return (
     <div className="artshop-order-container">
       <h2>Your Shopping Cart</h2>
+      <hr />
       {cartItems.length === 0 ? (
         <p>Your shopping cart is empty.</p>
       ) : (
@@ -68,6 +69,7 @@ function ArtshopOrder() {
           </div>
           <div className="order-details">
             <h3>Order Details</h3>
+            
             {cartItems.map((item) => (
               <div key={item._id} className="order-detail">
                 <span>{item.title}</span>

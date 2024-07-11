@@ -1,50 +1,69 @@
 .publish-artwork-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .publish-artwork-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .publish-artwork-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .publish-artwork-form h3 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .publish-artwork-form input,
-  .publish-artwork-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  .publish-artwork-form textarea {
-    resize: vertical;
-  }
-  
-  .publish-artwork-form button {
-    padding: 10px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-  }
-  
-  .publish-artwork-form .error {
-    color: red;
-    text-align: center;
-  }
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.publish-artwork-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.publish-artwork-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #D5D5D5;
+  text-align: center;
+}
+
+.publish-artwork-form h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.publish-artwork-form label {
+  margin-bottom: 0px;
+  font-size: 16px;
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  text-align: left;
+}
+
+.publish-artwork-form input,
+.publish-artwork-form textarea {
+  padding: 10px;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  background-color: #EAEAEA;
+}
+
+.publish-artwork-form textarea {
+  resize: vertical;
+}
+
+.publish-artwork-form button {
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.publish-artwork-form .error {
+  color: red;
+  text-align: center;
+}

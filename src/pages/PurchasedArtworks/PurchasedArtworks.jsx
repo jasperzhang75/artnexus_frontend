@@ -25,6 +25,7 @@ function PurchasedArtworks() {
   return (
     <div className="purchased-artworks-container">
       <h2>My Purchased Artworks</h2>
+      <hr />
       <div className="purchased-artworks-grid">
         {purchasedArtworks.map((artwork) => (
           <div key={artwork._id} className="purchased-artwork-item">

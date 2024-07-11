@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // import "./Artshop.css"
 import service from "./../../service/api"
 import "./ArtShop.css"
-
+import shoppingbag from"./../../assets/shoppingbag.svg"
 
 function ArtshopPage() {
   const [artworks, setArtworks] = useState([]);
@@ -28,6 +28,10 @@ function ArtshopPage() {
 
   return (
     <div className="artshop-container">
+      <div className="artshop-header">
+<img src={shoppingbag} alt="shoppingbag" className="shoppingbag"/>
+      <p>Shop Our Best Collection</p>
+      </div>
       <input
         type="text"
         placeholder="Search Artist"

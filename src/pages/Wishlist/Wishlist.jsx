@@ -40,6 +40,7 @@ function Wishlist() {
   return (
     <div className="wishlist-container">
       <h2>My Wishlist</h2>
+      <hr />
       <div className="wishlist-grid">
         {wishlistItems.map((item) => (
           <div key={item.artwork._id} className="wishlist-item">

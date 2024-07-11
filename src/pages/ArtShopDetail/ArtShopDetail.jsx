@@ -65,7 +65,7 @@ function ArtshopDetail() {
     }
     try {
       if (isWish) {
-        await service.delete(`/api/uploadedartworks/${id}/wish`);
+        await service.delete(`/api/wish/${id}`);
       } else {
         await service.post(`/api/uploadedartworks/${id}/wish`);
       }
@@ -115,34 +115,39 @@ function ArtshopDetail() {
   }
 
   return (
-    <div>
-      <hr />
-      <div className="artwork-detail-container">
-        <div className="artwork-img-container">
+    <div className="artshop-detail-page">
+      <hr className="artshop-detail-separator"/>
+      <div className="artshop-detail-container">
+        <p className="artshop-detail-date">
+          {artwork.date_start}
+        </p>
+        <span onClick={navigateToArtist} className="artshop-detail-artist">
+          {artwork.artist_title}
+        </span>
+        <p className="artshop-detail-title">{artwork.title}</p>
+        <div className="artshop-detail-img-container">
           <img src={`${artwork.imageUrl}`} alt={artwork.title} />
         </div>
-        <p className="artwork-title">{artwork.title}</p>
-        <p className="artwork-date">
-          {artwork.date_start} - {artwork.date_end}
-        </p>
-        <span onClick={navigateToArtist} className="artwork-artist">
-          {artwork.artist_display}
-        </span>
-        <p
-          className="artwork-description"
-          dangerouslySetInnerHTML={{ __html: artwork.description }}
-        ></p>
-        <div className="buttons-container">
-          <button onClick={toggleWish}>
-            {isWish ? "Remove from Wishlist" : "Add to Wishlist"}
-          </button>
-          <button onClick={addToCart} disabled={isAdded || isPurchased}>
+        <div className="artshop-detail-type-container">
+          <p className="artshop-detail-price">Price: {artwork.price} $</p>
+          <p onClick={toggleWish} className="artshop-addtowishlist">
+            {isWish ? "Remove from Wishlist -" : "Add to Wishlist +"}
+          </p>
+        </div>
+        <div className="artshop-detail-buttons-container">
+          <button className="artshop-addtocart" onClick={addToCart} disabled={isAdded || isPurchased}>
             {isAdded || isPurchased ? "Added to Cart" : "Add to Cart"}
           </button>
-          <button onClick={purchaseArtwork} disabled={isPurchased}>
+          <button className="artshop-purchase" onClick={purchaseArtwork} disabled={isPurchased}>
             {isPurchased ? "Already Purchased" : "Purchase"}
           </button>
         </div>
+      </div>
+      <div className="artshop-detail-description-container">
+        <p
+          className="artshop-detail-description"
+          dangerouslySetInnerHTML={{ __html: artwork.description }}
+        ></p>
       </div>
     </div>
   );

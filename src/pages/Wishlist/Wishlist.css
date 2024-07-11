@@ -1,47 +1,48 @@
 .wishlist-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .wishlist-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .wishlist-item {
-    width: calc(50% - 10px);
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .wishlist-item-image {
-    width: 100%;
-    height: auto;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-  
-  .remove-item-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #f00; /* Red color for the cross */
-  }
-  
-  .wishlist-item p {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 16px;
-  }
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+}
+
+.wishlist-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Center the grid items */
+}
+
+.wishlist-item {
+  width: calc(50% - 10px); /* Adjust width to allow for gaps */
+  position: relative;
+  cursor: pointer;
+  background-color: #eaeaea;
+  overflow: hidden; /* Ensure no overflow of content */
+}
+
+.wishlist-item-image {
+  width: 92%;
+  height: 400px; /* Fixed height for uniformity */
+  object-fit: cover; /* Ensure the image covers the container */
+  padding: 23px 20px 10px 20px
+}
+
+.remove-item-button {
+  position: absolute;
+  top: -0px;
+  right: 2px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: rgb(166, 166, 166); /* Grey color for the cross */
+}
+
+.wishlist-item p {
+  text-align: center;
+  margin-top: 0px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}

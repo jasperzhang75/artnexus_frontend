@@ -1,0 +1,147 @@
+/* Set the background color for the entire page */
+.body {
+    background-color: #DADEDF;
+  }
+  
+  .artshop-detail-page {
+    min-height: 100vh; /* Ensure it covers the entire viewport height */
+  }
+  
+  .artshop-detail-separator {
+    border: 0.1px solid rgb(210, 210, 210);
+    margin: 0px 0px 20px 0px;
+  }
+  
+  .artshop-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 900px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+  }
+  
+  .artshop-detail-date {
+    font-size: 1rem;
+    color: #A8A8A8;
+    text-align: center;
+    margin-top: 24px;
+    font-family: "Merriweather", serif;
+  }
+  
+  .artshop-detail-artist {
+    font-size: 3.5rem;
+    color: #1C1C1C;
+    text-align: center;
+    cursor: pointer;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    padding-top: 10px;
+  }
+  
+  .artshop-detail-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+  }
+  
+  .artshop-detail-img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .artshop-detail-img-container img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+  }
+  
+  .artshop-detail-type-container {
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .artshop-detail-price {
+    font-size: 1.3rem;
+    color: #666666;
+    font-family: "Merriweather", serif;
+    padding-left: 21rem;
+  }
+  
+  .artshop-addtowishlist {
+    font-size: 0.9rem;
+    color: #414141;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    text-align: right;
+  }
+  
+  .artshop-detail-description-container {
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: #f4f4f4;
+    text-align: left;
+  }
+  
+  .artshop-detail-description {
+    font-size: 1rem;
+    color: #2e2e2e;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.2;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0%;
+  }
+  
+  .artshop-detail-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    margin-bottom: 20px;
+  }
+  
+
+  
+  .artshop-detail-buttons-container button:hover {
+    background-color: #555;
+  }
+
+  .artshop-addtocart {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px 0px 0px 6px;
+    background-color: #1c1c1c;
+    color: #fff;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Montserrat", sans-serif;
+    width: 170px;
+  }
+  .artshop-purchase{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0px 6px 6px 0px;
+    background-color: #1c1c1c;
+    color: #fff;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Montserrat", sans-serif;
+    width: 170px;
+    border-left: 1px solid #585858;
+
+
+  }

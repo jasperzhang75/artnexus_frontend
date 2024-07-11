@@ -47,15 +47,15 @@
 }
 
 .artwork-description-renamed {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #404040;
   margin-bottom: 20px;
   text-align: justify;
   line-height: 1.2;
   max-width: 900px;
-  font-weight: 300;
+  font-weight: 200;
   font-family: "Montserrat", sans-serif;
-  letter-spacing: 1%;
+  letter-spacing: 0.3%;
 }
 
 .artwork-buttons-container-renamed {
