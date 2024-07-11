@@ -1,212 +1,206 @@
-.artwork-detail-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    margin: 0 auto;
-  }
-  
-  .artwork-img-container {
-background-color: #E8E8E8;
-width: 120%;
-align-items: center
-  }
+.artwork-detail-container-renamed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+}
 
-  .artwork-detail-container img {
-    width: 900px;
-    padding: 40px;
-  }
-  
-  .artwork-title {
-    font-size: 1.2rem;
-    padding: 20px;
-    margin-bottom: -15px;
-    font-family: "Merriweather", serif;
-    font-weight: 500;
-    color: #1c1c1c;
-    text-align: center;
-  }
-  
-  .artwork-date {
-    font-size: 1.2rem;
-    color: #8C8C8C;
-    text-align: center;
-    font-family: "Merriweather", serif;
-  }
-  
-  .artwork-artist {
-    font-size: 1.2rem;
-    color: #8C8C8C;
-    text-align: center;
-    cursor: pointer;
-    /* text-decoration: underline; */
-    font-family: "Merriweather", serif;
+.artwork-img-container-renamed {
+  background-color: #E8E8E8;
+  width: 120%;
+  align-items: center;
+}
 
-  }
-  
-  .artwork-description {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: justify;
-    line-height: 1.5;
-    max-width: 900px;
-    font-weight: 200;
-  }
-  
-  .buttons-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 15px;
-    padding: 10px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    background-color: #1c1c1c;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #555;
-  }
-  
-  .generated-artwork-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    background-color: #fff3cd;
-    padding: 20px;
-    width: 120%;
-  }
-  
-  .generated-artwork-container img {
-    width: 100%;
-    max-width: 900px;
-    margin-bottom: 20px;
-  }
-  
-  .generated-artwork-container p {
-    font-size: 1.2rem;
-    padding: 20px;
-    margin-bottom: -15px;
-    font-family: "Merriweather", serif;
-    font-weight: 500;
-    color: #1c1c1c;
-    text-align: center;
-  }
+.artwork-detail-container-renamed img {
+  width: 900px;
+  padding: 40px;
+}
 
-  
-  .comments-section {
-    margin-top: 20px;
-    width: 100%;
-  }
-  
-  .comments-section h2 {
-    font-size: 1.5rem;
-    font-family: "Merriweather", serif;
-    color: #1c1c1c;
-    margin-bottom: 10px;
-  }
-  
-  .comments-section p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .comments-section input {
-    width: calc(100% );
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    font-size: 1rem;
-    margin-right: 10px;
-  }
-  
-  .comments-section button {
-    padding: 10px 20px;
-    margin: 15px;
-    border: none;
-    border-radius: 20px;
-    background-color: #1c1c1c;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .comments-section button:hover {
-    background-color: #555;
-  }
-  
-  hr {
-    color: #ffffff;
-    margin-top: 40px;
-    border: 0.1px solid rgb(210, 210, 210);
-  }
+.artwork-title-renamed {
+  font-size: 1.2rem;
+  padding: 20px;
+  margin-bottom: -15px;
+  font-family: "Merriweather", serif;
+  font-weight: 500;
+  color: #1c1c1c;
+  text-align: center;
+}
 
-  .rainbow-button {
-    background: #E8E8E8; /* Background color of the button */
-    color:rgb(255, 255, 255); /* Text color */
-    padding: 10px 20px;
-    font-size: 1rem;
-    /* border: 3px solid; */
-    /* border-image: linear-gradient(
-      45deg,
-      red,
-      orange,
-      yellow,
-      green,
-      blue,
-      indigo,
-      violet
-    ) 1; */
-    border-radius: 25px;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    overflow:auto;
-    transition: color 0.6s;
-  }
-  
-  .rainbow-button:before {
-    content: "";
-    background: linear-gradient(
-      45deg,
-      red,
-      orange,
-      yellow,
-      green,
-      blue,
-      indigo,
-      violet
-    );
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    z-index: -1;
-    transition: all 0.6s;
-  }
-  
-  .rainbow-button:hover {
-    color: rgb(255, 255, 255);
-  }
-  
-  .rainbow-button:hover:before {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
-  }
+.artwork-date-renamed {
+  font-size: 1.2rem;
+  color: #8C8C8C;
+  text-align: center;
+  font-family: "Merriweather", serif;
+}
+
+.artwork-artist-renamed {
+  font-size: 1.2rem;
+  color: #8C8C8C;
+  text-align: center;
+  cursor: pointer;
+  font-family: "Merriweather", serif;
+}
+
+.artwork-description-renamed {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: justify;
+  line-height: 1.5;
+  max-width: 900px;
+  font-weight: 200;
+}
+
+.artwork-buttons-container-renamed {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.artwork-toggle-favourite-button-renamed,
+.artwork-rainbow-button-renamed,
+.artwork-save-comment-button-renamed,
+.artwork-cancel-comment-button-renamed,
+.artwork-edit-comment-button-renamed {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #1c1c1c;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.artwork-toggle-favourite-button-renamed:hover,
+.artwork-rainbow-button-renamed:hover,
+.artwork-save-comment-button-renamed:hover,
+.artwork-cancel-comment-button-renamed:hover,
+.artwork-edit-comment-button-renamed:hover {
+  background-color: #555;
+}
+
+.artwork-generated-container-renamed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #fff3cd;
+  padding: 20px;
+  width: 120%;
+}
+
+.artwork-generated-container-renamed img {
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 20px;
+}
+
+.artwork-generated-container-renamed p {
+  font-size: 1.2rem;
+  padding: 20px;
+  margin-bottom: -15px;
+  font-family: "Merriweather", serif;
+  font-weight: 500;
+  color: #1c1c1c;
+  text-align: center;
+}
+
+.artwork-comments-section-renamed {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.artwork-comments-section-renamed h2 {
+  font-size: 1.5rem;
+  font-family: "Merriweather", serif;
+  color: #1c1c1c;
+  margin-bottom: 10px;
+}
+
+.artwork-comments-section-renamed p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.artwork-comments-section-renamed input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.artwork-comments-section-renamed button {
+  padding: 10px 20px;
+  margin: 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: #1c1c1c;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.artwork-comments-section-renamed button:hover {
+  background-color: #555;
+}
+
+hr {
+  color: #ffffff;
+  margin-top: 40px;
+  border: 0.1px solid rgb(210, 210, 210);
+}
+
+.artwork-rainbow-button-renamed {
+  background: #E8E8E8; /* Background color of the button */
+  color: rgb(255, 255, 255); /* Text color */
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  overflow: auto;
+  transition: color 0.6s;
+}
+
+.artwork-rainbow-button-renamed:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+  transition: all 0.6s;
+}
+
+.artwork-rainbow-button-renamed:hover {
+  color: rgb(255, 255, 255);
+}
+
+.artwork-rainbow-button-renamed:hover:before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}

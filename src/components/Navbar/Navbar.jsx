@@ -40,7 +40,8 @@ function NavBar() {
         <Link to="/favourites">Favourites Collection</Link>
         <Link to="/aipainter">AI Painter</Link>
         <Link to="/artshop">Galleria Boutique</Link>
-        <div
+      </nav> 
+      <div
           className="user-menu"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
@@ -55,11 +56,10 @@ function NavBar() {
               <Link to="/wishlist">Wish List</Link>
               <Link to="/purchased-artworks">Purchased Art</Link>
               {user?.isArtist && <Link to="/my-artworks">My Artworks</Link>}
-              <button onClick={handleLogout} className="logout-button">Log Out</button>
+              <p onClick={handleLogout} className="logout-button">Log Out</p>
             </div>
           )}
         </div>
-      </nav>
     </div>
   );
 }

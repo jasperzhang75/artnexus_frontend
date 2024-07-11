@@ -1,21 +1,25 @@
 .nav-container {
     display: flex;
-    background-color: #f2f2f2; 
     width: 100%; 
     box-sizing: border-box; 
+    justify-content: space-between;
+    align-items: center;
   }
   
   
   .nav-center {
     /* display: flex; */
-    flex-grow: 0.9;
+    flex-grow: 1;
     justify-content: center; 
   }
   
   .nav-container img {
-    height: 65px; 
+    height: 60px; 
   }
-  
+   .logo {
+    width: 70px; 
+    height: 70px;
+   }
   
   nav {
   align-items: center;  
@@ -25,18 +29,75 @@
   
   nav a {
     text-decoration: none;
-    font-size: 18px;
-    color: #1C1C1C; 
-    transition: color 0.5s ease, background-color 0.5s ease;
-    padding: 5px 15px;
-    border-radius: 20px; 
-    font-family: "Lato", sans-serif;
-    font-weight: 500;
+    font-size: 1rem;
+    color: #1C1C1C;
+    transition: color 0.5s ease;
+    padding: 3px 2px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
     font-style: normal;
+    position: relative;
   }
   
-  nav a:hover {
-    color: #fff; 
-    background-color: #1C1C1C; 
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #2e2e2e;
+    transform-origin: bottom right;
+    /* transition: transform 0.5s ease; */
   }
   
+  nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+.login-icon {
+    width: 16px;
+    height: 16px;
+   
+  }
+  
+
+  .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px; /* Position the dropdown below the user icon */
+    right: 0;
+    background-color: #1c1c1c;
+    border-radius: 0px;
+    padding: 10px;
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); */
+    z-index: 1000; /* Ensure the dropdown is above other elements */
+    width: 110px;
+  }
+  .dropdown-menu a, .dropdown-menu p {
+    text-decoration: none;
+    color: #F5F5F5;
+    /* padding: 5px 10px; */
+    /* border-radius: 5px; */
+    margin: 0;
+    transition: background-color 0.3s ease;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: left;
+  }
+  
+  .dropdown-menu a:hover, .dropdown-menu p:hover {
+    /* background-color: #333; */
+  }
+  
+  .logout-button {
+    cursor: pointer;
+  }
+
+  .user-menu {
+    position: relative; /* Ensure the dropdown is positioned relative to this container */
+  }

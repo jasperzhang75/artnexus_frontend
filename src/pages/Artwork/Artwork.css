@@ -6,17 +6,18 @@
   }
   
   .artwork-container p {
-    font-size: 2rem;
+    font-size: 2.3rem;
     margin-bottom: 20px;
     margin-top: 25px;
     font-family: "Merriweather", serif;
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
-    color: #1c1c1c;
+    color: #414141;
     width: 100%;
   }
   
   .artwork-search-input {
+    display: none;
     width: 200px;
     padding: 10px;
     border: 1px solid #ddd;
@@ -92,3 +93,11 @@
     font-size: 0.9rem;
   }
   
+.like-button {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.like-button img {
+    width: 25px;
+    height: 25px;
+}

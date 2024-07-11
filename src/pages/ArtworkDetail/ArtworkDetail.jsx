@@ -123,39 +123,39 @@ function ArtworkDetail() {
   return (
     <div>
       <hr></hr>
-      <div className="artwork-detail-container">
-        <div className="artwork-img-container">
+      <div className="artwork-detail-container-renamed">
+        <div className="artwork-img-container-renamed">
           <img
             src={`https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`}
             alt={artwork.title}
           />
         </div>
-        <p className="artwork-title">{artwork.title}</p>
-        <p className="artwork-date">
+        <p className="artwork-title-renamed">{artwork.title}</p>
+        <p className="artwork-date-renamed">
           {artwork.date_start} - {artwork.date_end}
         </p>
-        <span onClick={navigateToArtist} className="artwork-artist">
+        <span onClick={navigateToArtist} className="artwork-artist-renamed">
           {artwork.artist_display}
         </span>
         <p
-          className="artwork-description"
+          className="artwork-description-renamed"
           dangerouslySetInnerHTML={{ __html: artwork.description }}
         ></p>
-        <div className="buttons-container">
-          <button onClick={toggleFavourite}>
+        <div className="artwork-buttons-container-renamed">
+          <button className="artwork-toggle-favourite-button-renamed" onClick={toggleFavourite}>
             {isFavourite ? "Unfavourite" : "Favourite"}
           </button>
         </div>
-        <button className="rainbow-button" onClick={handleGenerateArtwork}>
+        <button className="artwork-rainbow-button-renamed" onClick={handleGenerateArtwork}>
           AI-mpressionist It!
         </button>
         {generatedArtwork && (
-          <div className="generated-artwork-container">
+          <div className="artwork-generated-container-renamed">
             <p>AI-mpressionist Recreation is here!</p>
             <img src={generatedArtwork} alt="Generated Artwork" />
           </div>
         )}
-        <div className="comments-section">
+        <div className="artwork-comments-section-renamed">
           <hr></hr>
 
           <h2>Comment</h2>
@@ -167,13 +167,14 @@ function ArtworkDetail() {
                 onChange={(e) => setNewComment(e.target.value)}
                 placeholder="Add or edit your comment"
               />
-              <button onClick={saveComment}>Save</button>
-              <button onClick={() => setEditMode(false)}>Cancel</button>
+              <button className="artwork-save-comment-button-renamed" onClick={saveComment}>Save</button>
+              <button className="artwork-cancel-comment-button-renamed" onClick={() => setEditMode(false)}>Cancel</button>
             </>
           ) : (
             <>
               <p>{comments ? comments : "No comments yet"}</p>
               <button
+                className="artwork-edit-comment-button-renamed"
                 onClick={() => {
                   setNewComment(comments ? comments : "");
                   setEditMode(true);

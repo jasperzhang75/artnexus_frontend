@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import "./Artwork.css";
 import service from "./../../service/api";
 import { AuthContext } from "../../context/AuthContextWrapper";
+import heartIcon from "./../../assets/heart.svg";
+import heartFilledIcon from "./../../assets/heart-filled.svg";
+
+function shuffleArray(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
 
 function Artwork() {
   const [artworks, setArtworks] = useState([]);
@@ -15,7 +21,8 @@ function Artwork() {
   const getArtwork = async () => {
     try {
       const res = await service.get("api/normalartworks/");
-      setArtworks(res.data);
+      const shuffledArtworks = shuffleArray(res.data); // Shuffle the artworks
+      setArtworks(shuffledArtworks);
     } catch (error) {
       console.log(error);
     }
@@ -111,9 +118,9 @@ function Artwork() {
             <div className="artwork-info">
               <p>{artwork.title}</p>
               <p>{artwork.artist_title}</p>
-              <button className="like-button" onClick={() => toggleLike(artwork._id)}>
-                {likedArtworks.includes(artwork._id) ? '❤️' : '🤍'}
-              </button>
+              <p className="like-button" onClick={() => toggleLike(artwork._id)}>
+                <img src={likedArtworks.includes(artwork._id) ? heartFilledIcon : heartIcon} alt="like button" />
+              </p>
             </div>
           </div>
         ))}
