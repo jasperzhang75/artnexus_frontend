@@ -29,7 +29,7 @@ function ArtistArtworkDetail() {
       {artwork.image && <img src={artwork.image} alt={artwork.title} />} 
       </div >
       <div className="artist-artwork">
-      <h3>{artwork.title}</h3>
+      <p>{artwork.title}</p>
       <p>{artwork.yearAsString}</p>
 </div>
    </div>

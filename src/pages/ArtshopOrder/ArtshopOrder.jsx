@@ -73,7 +73,7 @@ function ArtshopOrder() {
             {cartItems.map((item) => (
               <div key={item._id} className="order-detail">
                 <span>{item.title}</span>
-                <span>{item.price} $</span>
+                <span className="item-price">{item.price} $</span>
               </div>
             ))}
             <hr />

@@ -30,7 +30,7 @@ function PublishArtwork() {
     }
     try {
       const res = await service.post("/api/uploadedartworks", artworkDetails);
-      navigate(`/artshop/${res.data._id}`);
+      navigate(`/artshop/`);
     } catch (error) {
       setError("Error publishing artwork. Please try again.");
     }

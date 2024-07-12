@@ -142,6 +142,7 @@ function ArtworkDetail() {
           AI Remix it!
         </button>
         
+        
           {!showOriginal && (
             <button className="close-button-renamed" onClick={toggleArtwork}>
               x
@@ -151,6 +152,7 @@ function ArtworkDetail() {
           
         </div>
         <hr className="separtor"/>
+        <div>
         <p className="artwork-title-renamed">{artwork.title}</p>
         <p className="artwork-date-renamed">
           {artwork.date_start} - {artwork.date_end}
@@ -173,10 +175,10 @@ function ArtworkDetail() {
         {/* {generatedArtwork && (
           <div className="artwork-generated-container-renamed">
           </div>
-        )} */}
+        )} */}</div>
         <div className="artwork-comments-section-renamed">
           <hr />
-          <h2>Comment</h2>
+          <div>Comment</div>
           {editMode ? (
             <>
               <input
