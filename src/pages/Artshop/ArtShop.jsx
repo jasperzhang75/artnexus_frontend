@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import "./Artshop.css"
-import service from "./../../service/api"
-import "./ArtShop.css"
-import shoppingbag from"./../../assets/shoppingbag.svg"
+import service from "./../../service/api";
+import "./ArtShop.css";
+import shoppingbag from "./../../assets/shoppingbag.svg";
 
 function ArtshopPage() {
   const [artworks, setArtworks] = useState([]);
@@ -26,11 +25,15 @@ function ArtshopPage() {
     artwork.artist_title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const handleImageLoad = (event) => {
+    event.target.classList.add('loaded');
+  };
+
   return (
     <div className="artshop-container">
       <div className="artshop-header">
-<img src={shoppingbag} alt="shoppingbag" className="shoppingbag"/>
-      <p>Shop Our Best Collection</p>
+        <img src={shoppingbag} alt="shoppingbag" className="shoppingbag"/>
+        <p>Shop Our Best Collection</p>
       </div>
       <input
         type="text"
@@ -46,7 +49,8 @@ function ArtshopPage() {
               <img
                 src={`${artwork.imageUrl}`}
                 alt={artwork.title}
-                loading="lazy"
+                onLoad={handleImageLoad}
+                className="artshop-image"
               />
             </Link>
             <p className="artshop-title">{artwork.title}</p>

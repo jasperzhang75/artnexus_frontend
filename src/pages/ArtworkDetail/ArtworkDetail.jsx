@@ -126,7 +126,7 @@ function ArtworkDetail() {
   }
 
   return (
-    <div>
+    <div className="big-container">
       <hr className="separtor1"/>
       <div className="artwork-detail-container-renamed">
         <div className="artwork-img-container-renamed">

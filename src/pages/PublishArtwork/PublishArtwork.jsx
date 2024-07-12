@@ -37,7 +37,7 @@ function PublishArtwork() {
   };
 
   return (
-    <div> 
+    <div className="publish-artwork-bigcontainer"> 
       <h2>Publish Artwork</h2>
       <hr />
     <div className="publish-artwork-container">

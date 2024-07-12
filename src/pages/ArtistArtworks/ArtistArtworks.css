@@ -18,7 +18,11 @@
     margin: 5px 0 0 0;
     font-size: 14px;
   } */
+  .artistartworks-container {
+    padding: 0 2.8rem 0 2.8rem;
+    box-sizing: border-box; /* Include padding in the element's total width */
   
+  }
   .artistartworks-container h1 {
     font-size: 2rem;
     margin-bottom: 10px;

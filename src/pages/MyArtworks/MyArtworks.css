@@ -1,5 +1,7 @@
 .my-artworks-container {
   width: 100%;
+  padding: 0 2.8rem 0 2.8rem;
+  box-sizing: border-box; 
 }
 
 h2 {

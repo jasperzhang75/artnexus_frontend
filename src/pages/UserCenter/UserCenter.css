@@ -1,6 +1,9 @@
 .user-center-container {
   width: 100%;
   text-align: center;
+  padding: 0 2.8rem 0 2.8rem;
+  box-sizing: border-box; /* Include padding in the element's total width */
+
 }
 
 h2 {

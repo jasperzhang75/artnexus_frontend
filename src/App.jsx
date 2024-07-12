@@ -22,11 +22,12 @@ import PublishArtwork from "./pages/PublishArtwork/PublishArtwork";
 import MyArtworks from "./pages/MyArtworks/MyArtworks";
 import ModifyArtwork from "./pages/ModifyArtwork/ModifyArtwork";
 import UserCenter from "./pages/UserCenter/UserCenter";
+import { BackgroundColorProvider } from "./context/BackgroundColorContext";
 export const MyContext = createContext();
 
 function App() {
   return (
-    <>
+    <BackgroundColorProvider>
       <NavBar />
       <Routes>
         <Route path="/aipainter" element={<AiPainter />} />
@@ -57,7 +58,7 @@ function App() {
           <Route path="/user-center" element={<UserCenter />} />
         </Route>
       </Routes>
-    </>
+      </BackgroundColorProvider>
   );
 }
 

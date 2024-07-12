@@ -1,6 +1,9 @@
 .artshop-order-container {
   width: 100%;
   margin: 0 auto;
+  padding: 0 2.8rem 0 2.8rem;
+  box-sizing: border-box; /* Include padding in the element's total width */
+
 }
 
 h2 {

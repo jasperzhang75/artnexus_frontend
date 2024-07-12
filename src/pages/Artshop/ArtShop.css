@@ -3,7 +3,8 @@
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 2.8rem 0 2.8rem;
+
   }
   
   .artshop-search-input {
@@ -50,7 +51,15 @@
     width: 100%;
     height: 300px;
     object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+    opacity: 0; /* Initial state: invisible */
+    transition: opacity 1s ease-in-out; /* Transition effect for opacity */
   }
+  
+  .artshop-item img.loaded {
+    opacity: 1; /* Loaded state: visible */
+  }
+  
+
   
   .artshop-title {
     font-size: 1rem;
@@ -86,7 +95,7 @@
     font-size: 2.3rem;
     color: #414141;
   }
-  
+
   .artshop-header img {
     height: 35px;
     padding: 10px 25px 10px 10px;

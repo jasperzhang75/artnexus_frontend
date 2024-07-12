@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../context/AuthContextWrapper";
+import { useBackgroundColor } from '../../context/BackgroundColorContext'; // Import the background color context
 import "./ArtShopDetail.css";
 import service from "./../../service/api";
 
@@ -13,6 +14,7 @@ function ArtshopDetail() {
 
   const navigate = useNavigate();
   const { isLoggedIn } = useContext(AuthContext);
+  const { setBackgroundColor } = useBackgroundColor(); // Use the context to set the background color
 
   const getArtworkDetail = async () => {
     try {
@@ -56,7 +58,9 @@ function ArtshopDetail() {
     checkWishStatus();
     checkCartStatus();
     checkPurchaseStatus();
-  }, [id]);
+    setBackgroundColor('#DADEDF'); // Set the background color when component mounts
+    return () => setBackgroundColor(''); // Reset the background color when component unmounts
+  }, [id, setBackgroundColor]);
 
   const toggleWish = async () => {
     if (!isLoggedIn) {
@@ -116,7 +120,6 @@ function ArtshopDetail() {
 
   return (
     <div className="artshop-detail-page">
-      <hr className="artshop-detail-separator"/>
       <div className="artshop-detail-container">
         <p className="artshop-detail-date">
           {artwork.date_start}
@@ -144,10 +147,12 @@ function ArtshopDetail() {
         </div>
       </div>
       <div className="artshop-detail-description-container">
+        <div className="artshop-detail-description-text">
         <p
           className="artshop-detail-description"
           dangerouslySetInnerHTML={{ __html: artwork.description }}
         ></p>
+        </div>
       </div>
     </div>
   );

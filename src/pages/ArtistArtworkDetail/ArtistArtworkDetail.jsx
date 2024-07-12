@@ -23,7 +23,7 @@ function ArtistArtworkDetail() {
   }, [contentId]);
 
   return (
-    <div>
+    <div className="big-artist-artwork-detail-container">
       <hr></hr>
     <div className="artist-artwork-detail-container">
       {artwork.image && <img src={artwork.image} alt={artwork.title} />} 

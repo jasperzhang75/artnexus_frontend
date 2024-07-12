@@ -53,7 +53,7 @@ function ModifyArtwork() {
   };
 
   return (
-    <div> 
+    <div className="modify-artwork-bigcontainer"> 
       <h2>Modify Artwork</h2>
       <hr />
     <div className="modify-artwork-container">

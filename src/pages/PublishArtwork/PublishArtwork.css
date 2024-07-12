@@ -1,3 +1,8 @@
+.publish-artwork-bigcontainer{
+  width: 100%;
+  padding: 0 2.8rem 0 2.8rem;
+  box-sizing: border-box; 
+}
 .publish-artwork-container {
   width: 100%;
   max-width: 500px; /* Adjust as needed */
