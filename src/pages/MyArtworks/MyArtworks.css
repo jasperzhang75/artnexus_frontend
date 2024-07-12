@@ -4,7 +4,7 @@
 
 h2 {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 hr {
@@ -60,4 +60,17 @@ hr {
   background-color: black;
   color: white;
   width: 45%;
+}
+.my-artworks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.my-artworks-header h2 {
+  margin-bottom: 20px;
+}
+
+.upload-an-artwork {
+  height: 30px;
+  width: 30px;
 }

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContextWrapper";
 import service from "./../../service/api";
 import "./MyArtworks.css";
+import uploadanartwork from "./../../assets/add.svg";
 
 function MyArtworks() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -39,7 +40,10 @@ function MyArtworks() {
 
   return (
     <div className="my-artworks-container">
+      <div className="my-artworks-header">
       <h2>My Artworks</h2>
+      <img src={uploadanartwork} alt="Upload an artwork" className="upload-an-artwork" onClick={() => navigate("/publish-artwork")} />
+      </div>
       <hr />
       <div className="my-artworks-grid">
         {artworks.map((artwork) => (

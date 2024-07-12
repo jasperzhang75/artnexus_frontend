@@ -11,7 +11,6 @@ function LoginPage() {
   });
   const { storeToken, authenticateUser } = useContext(AuthContext);
   const [errorMessage, setErrorMessage] = useState("");
-  // const navigate = useNavigate()
 
   function handleChange(event) {
     const value = event.currentTarget.value;
@@ -39,7 +38,11 @@ function LoginPage() {
 
   const { password, email } = formData;
   return (
+
+    <div className="login-form-container">
+      
     <form onSubmit={handleSubmit} className="login-form">
+      <p>Sign in to access personalized content</p>
       <div className="login-field">
         <label htmlFor="email" className="login-label">Email: </label>
         <input
@@ -51,7 +54,7 @@ function LoginPage() {
         />
       </div>
       <div className="login-field">
-        <label htmlFor="username" className="login-label">Password: </label>
+        <label htmlFor="password" className="login-label">Password: </label>
         <input
           type="password"
           id="password"
@@ -61,13 +64,13 @@ function LoginPage() {
         />
       </div>
 
-      <p className="login-error">{errorMessage}</p>
-
+     
+<button className="login-button">Login</button>
       <p className="login-signup">
-        No account? <Link to={"/signup"} className="login-signup-link">Sign up!</Link>
+        No account? <Link to={"/signup"} className="login-signup-link">Sign up now!</Link>
       </p>
-      <button className="login-button">Login</button>
-    </form>
+       <p className="login-error">{errorMessage}</p>
+    </form></div>
   );
 }
 

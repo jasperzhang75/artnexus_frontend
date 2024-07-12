@@ -43,7 +43,7 @@ function PublishArtwork() {
     <div className="publish-artwork-container">
      
       <form onSubmit={handleSubmit} className="publish-artwork-form">
-        <h3>Fill in the artwork detail</h3>
+        <p>Fill in the artwork detail</p>
         {error && <p className="error">{error}</p>}
         <label htmlFor="title">Title</label>
         <input

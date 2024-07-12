@@ -60,7 +60,7 @@ function ModifyArtwork() {
      
       <form onSubmit={handleSubmit} className="modify-artwork-form">
         <div className="form-title">
-        <h3>Fill in the artwork detail</h3>
+        <p>Fill in the artwork detail</p>
         </div>
         {error && <p className="error">{error}</p>}
         <label htmlFor="title">Title</label>

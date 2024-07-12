@@ -42,11 +42,12 @@ function SignUpPage() {
   const { username, password, email, firstName, lastName } = formData;
   return (
     <div className="signup-container">
-      <h2>Sign Up</h2>
+      
+      <form onSubmit={handleSubmit} className="signup-form">
+        <p>Sign up to enjoy the full benefits</p>
       <Link to="/signup-artist" className="artist-link">
         I am an artist
       </Link>
-      <form onSubmit={handleSubmit} className="signup-form">
         <div className="signup-field">
           <label htmlFor="username" className="signup-label">Username: </label>
           <input
@@ -98,12 +99,11 @@ function SignUpPage() {
           />
         </div>
 
-        <p className="signup-error">{errorMessage}</p>
-
+        <button className="signup-button">Sign Up</button> 
         <p className="signup-login">
           Already have an account? <Link to={"/login"} className="signup-login-link">Login.</Link>
         </p>
-        <button className="signup-button">Sign Up</button>
+        <p className="signup-error">{errorMessage}</p>
       </form>
     </div>
   );

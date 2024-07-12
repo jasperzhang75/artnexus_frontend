@@ -43,8 +43,9 @@ function SignUpArtistPage() {
   const { username, password, email, firstName, lastName } = formData;
   return (
     <div className="signup-artist-container">
-      <h2>Sign Up as an Artist</h2>
+      
       <form onSubmit={handleSubmit} className="signup-artist-form">
+        <p>Sign Up as an Artist</p>
         <div className="signup-artist-field">
           <label htmlFor="username" className="signup-artist-label">Username: </label>
           <input
@@ -96,12 +97,14 @@ function SignUpArtistPage() {
           />
         </div>
 
-        <p className="signup-artist-error">{errorMessage}</p>
-
+       
+        <button className="signup-artist-button">Sign Up</button> 
         <p className="signup-artist-login">
           Already have an account? <Link to={"/login"} className="signup-artist-login-link">Login.</Link>
         </p>
-        <button className="signup-artist-button">Sign Up</button>
+        <p className="signup-artist-error">{errorMessage}</p>
+
+        
       </form>
     </div>
   );

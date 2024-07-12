@@ -16,17 +16,18 @@
   flex-direction: column;
   gap: 15px;
   background-color: #f5f5f5;
-  padding: 20px;
+  padding: 30px 40px 40px;
   margin-top: 20px;
   border: 1px solid #D5D5D5;
   text-align: center;
 }
 
-.publish-artwork-form h3 {
+.publish-artwork-form p {
   text-align: center;
   margin-bottom: 10px;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
+  font-size: 18px;
 }
 
 .publish-artwork-form label {
@@ -55,7 +56,6 @@
   background-color: #000;
   color: #fff;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
   margin-top: 20px;

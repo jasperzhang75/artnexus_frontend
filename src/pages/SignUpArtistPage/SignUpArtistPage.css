@@ -1,71 +1,89 @@
 .signup-artist-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 400px;
-    margin: 100px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fff;
-  }
-  
-  .signup-artist-form {
-    width: 100%;
-  }
-  
-  .signup-artist-field {
-    margin-bottom: 20px;
-  }
-  
-  .signup-artist-label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .signup-artist-input {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .signup-artist-error {
-    color: red;
-    margin-bottom: 20px;
-  }
-  
-  .signup-artist-login {
-    margin-top: 0;
-    font-size: 14px;
-  }
-  
-  .signup-artist-login-link {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .signup-artist-login-link:hover {
-    text-decoration: underline;
-  }
-  
-  .signup-artist-button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .signup-artist-button:hover {
-    background-color: #555;
-  }
+  width: 100%;
+  max-width: 450px; /* Adjust as needed */
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.signup-artist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #f5f5f5;
+  padding: 30px 40px 8px 40px;
+  margin-top: 20px;
+  border: 1px solid #D5D5D5;
+  text-align: center;
+}
+
+.signup-artist-form p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  margin-bottom: 0px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.signup-artist-field {
+  width: 100%;
+  text-align: left;
+}
+
+.signup-artist-label {
+  margin-bottom: 0px;
+  font-size: 14px;
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.signup-artist-input {
+  width: 100%;
+  padding: 10px 0px 10px 0;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+}
+
+.signup-artist-error {
+  color: red;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.signup-artist-login {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.signup-artist-login-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-artist-login-link:hover {
+  text-decoration: underline;
+}
+
+.signup-artist-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 15px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Montserrat", sans-serif;
+}
+
+.signup-artist-button:hover {
+  background-color: #555;
+}

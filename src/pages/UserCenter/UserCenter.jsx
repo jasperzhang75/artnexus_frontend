@@ -2,10 +2,10 @@ import  { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContextWrapper";
 import "./UserCenter.css";
-import shoppingcart from"./../../assets/shoppingcart.svg"
-import wishlist from"./../../assets/wishlist.svg"
-import purchased from"./../../assets/purchased.svg"
-import myartworks from"./../../assets/myartworks.svg"
+import shoppingcart from "./../../assets/shoppingcart.svg";
+import wishlist from "./../../assets/wishlist.svg";
+import purchased from "./../../assets/purchased.svg";
+import myartworks from "./../../assets/myartworks.svg";
 
 function UserCenter() {
   const { user } = useContext(AuthContext);
@@ -13,7 +13,8 @@ function UserCenter() {
 
   return (
     <div className="user-center-container">
-      <h2>Welcome, {user?.name}!</h2>
+      <h2>Welcome, {user?.username}!</h2>
+      <hr />
       <div className="user-center-grid">
         <div className="user-center-item" onClick={() => navigate("/artshop/order")}>
           <img src={shoppingcart} alt="My Shopping Cart" className="user-center-icon" />
