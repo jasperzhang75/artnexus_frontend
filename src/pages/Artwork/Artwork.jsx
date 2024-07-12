@@ -61,6 +61,10 @@ function Artwork() {
     }
   };
 
+  const handleImageLoad = (event) => {
+    event.target.classList.add('loaded');
+  };
+
   const filteredArtworks = artworks.filter((artwork) => {
     const matchesSearchTerm = artwork.artist_display.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesFilterType = filterType.length === 0 || filterType.includes(artwork.type);
@@ -110,6 +114,8 @@ function Artwork() {
                 src={`https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`}
                 alt={artwork.title}
                 loading="lazy"
+                onLoad={handleImageLoad}
+                className="artwork-image"
               />
             </Link>
             <div className="artwork-info">
