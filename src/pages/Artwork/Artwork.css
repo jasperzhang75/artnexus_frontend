@@ -39,7 +39,7 @@
 
 @media (min-width: 800px) {
   .artwork-grid {
-    grid-template-columns: repeat(4, auto);
+      grid-template-columns: repeat(4, auto);
   }
 }
 
@@ -63,12 +63,6 @@
   width: 100%;
   height: auto;
   display: block;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.artwork-item img.loaded {
-  opacity: 1;
 }
 
 .artwork-info p {
@@ -115,7 +109,7 @@
 .artist-like p {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
-  color: #8c8c8c;
+  color: #8C8C8C;
   font-size: 15px;
   margin: 10px 0px;
 }
@@ -135,14 +129,15 @@
   font-size: 0.8rem;
   font-family: "Montserrat", sans-serif;
   position: fixed;
-  bottom: 1.3rem;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-  font-weight: 400;
+bottom: 1.3rem;
+box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+font-weight: 400;
 }
 
 .filter-icon {
   font-size: 1rem;
   font-weight: 400;
+  /* font-weight: ; */
 }
 
 .dropdown-menu-artwork {
@@ -171,11 +166,9 @@
   text-align: center;
   align-items: center;
 }
-
 .custom-checkbox:checked {
   background-color: #a6a6a6;
 }
-
 .custom-checkbox:checked::before {
   position: absolute;
   top: 0px;
@@ -183,14 +176,4 @@
   color: rgb(153, 153, 153);
   font-size: 14px;
   font-weight: bold;
-}
-
-/* Add loading effect */
-.artwork-item img {
-  opacity: 0; /* Initial state: invisible */
-  transition: opacity 1s ease-in-out; /* Transition effect for opacity */
-}
-
-.artwork-item img.loaded {
-  opacity: 1; /* Loaded state: visible */
 }
