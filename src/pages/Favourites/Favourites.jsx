@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import service from "../../service/api";  
+import service from "../../service/api";
 import "./Favourites.css"
-
 
 function Favourites() {
   const [favourites, setFavourites] = useState([]);
+  const [loadedImages, setLoadedImages] = useState({});
 
   useEffect(() => {
     const getFavourites = async () => {
@@ -25,6 +25,10 @@ function Favourites() {
     return "small";
   };
 
+  const handleImageLoad = (artworkId) => {
+    setLoadedImages(prev => ({ ...prev, [artworkId]: true }));
+  };
+
   return (
     <div className="favourites-container">
       <h1>Favourite Artworks</h1>
@@ -36,6 +40,8 @@ function Favourites() {
                 <img
                   src={`https://www.artic.edu/iiif/2/${artwork.artwork.image_id}/full/843,/0/default.jpg`}
                   alt={artwork.title}
+                  onLoad={() => handleImageLoad(artwork.artwork._id)}
+                  className={loadedImages[artwork.artwork._id] ? 'loaded' : ''}
                 />
               </Link>
             </div>
